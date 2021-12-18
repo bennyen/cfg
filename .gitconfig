@@ -8,3 +8,16 @@
 	autocrlf = input
 [pull]
 	rebase = true
+[alias]
+	a = add
+	aa = add --all
+	s = status
+	co = checkout
+	cob = checkout -b
+	cm = commit -m
+	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	bd = branch -D
+	f = fetch
+	l = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	pl = pull
+	pu = push -u origin HEAD
