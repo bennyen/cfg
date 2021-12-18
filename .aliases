@@ -24,3 +24,12 @@ alias l='ls -CF'
 
 # git aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
+}
+
+# import git aliases as shortened shell aliases. e.g., 'git s' -> 'gs'
+for al in `git config --name-only --get-regexp '^alias\.' | sed 's/alias\.//g'`; do
+    alias g$al="git $al"
+done
