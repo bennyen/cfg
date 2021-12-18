@@ -1,0 +1,10 @@
+[user]
+	email = 51464764+bennyen@users.noreply.github.com
+	name = Benny Ng
+[init]
+	defaultBranch = main
+[core]
+	eol = lf
+	autocrlf = input
+[pull]
+	rebase = true
