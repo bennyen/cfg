@@ -11,10 +11,12 @@
 [alias]
 	a = add
 	aa = add --all
+	d = diff
 	s = status
+	cm = commit -m
 	co = checkout
 	cob = checkout -b
-	cm = commit -m
+	cp = cherry-pick
 	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	bd = branch -D
 	f = fetch
