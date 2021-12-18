@@ -8,12 +8,12 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+export EDITOR='vim'
+export VISUAL='vim'
+
+# load aliases from external file
+if [ -f "$HOME/.aliases" ] ; then
+    . "$HOME/.aliases"
 fi
 
 # set PATH so it includes user's private bin if it exists
@@ -26,6 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export EDITOR='vim'
-export NPM_CONFIG_PREFIX=$HOME/.npm-global
-export PATH=$PATH:/usr/bin:$NPM_CONFIG_PREFIX/bin
+# PATH
+export NPM_CONFIG_PREFIX="$HOME/.npm-global"
+export GEM_HOME="$HOME/gems"
+export PATH=$PATH:\
+    /usr/bin:\
+    $NPM_CONFIG_PREFIX/bin:\
+    $GEM_HOME/bin
