@@ -29,7 +29,7 @@ fi
 # PATH
 export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 export GEM_HOME="$HOME/gems"
-export PATH=$PATH:\
-    /usr/bin:\
-    $NPM_CONFIG_PREFIX/bin:\
-    $GEM_HOME/bin
+PATH=$PATH:/usr/bin
+PATH=$PATH:$NPM_CONFIG_PREFIX/bin
+PATH=$PATH:$GEM_HOME/bin
+export PATH
